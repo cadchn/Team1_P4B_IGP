@@ -42,10 +42,9 @@ def sort_tuple(tup, truth):
     tup.sort(key = lambda x: x[0], reverse = truth)
     return tup
 
+# this part onwards should be in main.py file, have to also write the code to writelines in the summary report txt file in main.py file
 sorted_deficit_list = sort_tuple(deficit_list, False)
 sorted_surplus_list = sort_tuple(surplus_list, True)
-
-
 
 if len(surplus_list) == len(difference_list):
     print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
