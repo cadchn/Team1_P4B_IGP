@@ -39,8 +39,9 @@ for difference in difference_list:
 # print(deficit_list)
 
 def sort_tuple(tup, truth):
-    tup.sort(key = lambda x:x[1], reverse = truth)
-    return tup
+    new_deficit_list = tup[:]
+    new_deficit_list.sort(key = lambda x:x[1], reverse = truth)
+    return new_deficit_list
 
 # this part onwards should be in main.py file, have to also write the code to writelines in the summary report txt file in main.py file
 sorted_deficit_list = sort_tuple(deficit_list, True)
