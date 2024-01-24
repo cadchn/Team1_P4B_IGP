@@ -69,10 +69,18 @@ else:
     print(f"[2ND HIGHEST NET PROFIT DEFICIT] DAY: {sorted_deficit_list[1][0]}, AMOUNT: {sorted_deficit_list[1][1]}")
     print(f"[3RD HIGHEST NET PROFIT DEFICIT] DAY: {sorted_deficit_list[2][0]}, AMOUNT: {sorted_deficit_list[2][1]}")
 
-driver_summary_txt = ""
-for i in deficit_list: 
-    driver_summary_txt += ','.join(i)+'\n'
 
-# create a file path to txt file.
-fp = Path.cwd()/"summary_report.txt"
+
+
+# sorted_deficit_list.append(deficit_list)
+
+# deficit_summary_txt = ""
+# for i in sorted_deficit_list: 
+#     deficit_summary_txt += ','.join(i)+'\n'
+
+# # create a file path to txt file.
+# fp = Path.cwd()/"summary_report.txt"
+
+# with fp.open(mode="w", encoding="UTF-8", newline='') as file:
+#     file.write('top 3 highest deficit amount\nday occured')
 
