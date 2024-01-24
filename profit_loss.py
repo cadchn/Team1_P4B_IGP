@@ -25,7 +25,7 @@ def difference_computation():
         difference_list.append([row[0],difference]) # appending all difference into an empty list
     return difference_list
     
-print(difference_computation())
+difference_computation()
 
 # from here onwards, idk if need, but this is a desparate attempt to find out always increasing, decreasing or fluctuating
 deficit_list = []
