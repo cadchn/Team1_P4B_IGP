@@ -61,8 +61,3 @@ else:
     print(f"[HIGHEST CASH ON HAND DEFICIT] DAY: {sorted_deficit_list[0][0]}, AMOUNT: {sorted_deficit_list[0][1]}")
     print(f"[2ND HIGHEST CASH ON HAND DEFICIT] DAY: {sorted_deficit_list[1][0]}, AMOUNT: {sorted_deficit_list[1][1]}")
     print(f"[3RD HIGHEST CASH ON HAND DEFICIT] DAY: {sorted_deficit_list[2][0]}, AMOUNT: {sorted_deficit_list[2][1]}")
-
-for difference in difference_list:
-    if difference[1] > 0:
-        increase_list.append([difference[0], difference[1]])
-# print(decrease_list)
