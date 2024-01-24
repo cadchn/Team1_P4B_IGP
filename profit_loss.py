@@ -36,15 +36,22 @@ for difference in difference_list:
 for difference in difference_list:
     if difference[1] > 0:
         surplus_list.append([difference[0], difference[1]])
-print(deficit_list)
+# print(deficit_list)
 
 def sort_tuple(tup, truth):
-    tup.sort(key = lambda x: x[0], reverse = truth)
+    tup.sort(key = lambda x:x[1], reverse = truth)
     return tup
 
 # this part onwards should be in main.py file, have to also write the code to writelines in the summary report txt file in main.py file
-sorted_deficit_list = sort_tuple(deficit_list, False)
+sorted_deficit_list = sort_tuple(deficit_list, True)
 sorted_surplus_list = sort_tuple(surplus_list, True)
+# print(sorted_deficit_list)
+# HD = sorted_deficit_list[0][0], sorted_deficit_list[0][1]
+# SHD = sorted_deficit_list[1][0], sorted_deficit_list[1][1]
+# THD = sorted_deficit_list[2][0], sorted_deficit_list[2][1]
+# print(HD)
+deficit_list.sort(key = lambda x:x[0], reverse = False)
+# print(deficit_list)
 
 if len(surplus_list) == len(difference_list):
     print(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
