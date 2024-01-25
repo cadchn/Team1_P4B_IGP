@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 
-file_path = Path(Path.cwd(),"profit_and_loss.csv")
+file_path = Path(r"C:\Users\jocel\PFB IGP\Team1_P4B_IGP\profit_and_loss.csv")
 
 with file_path.open(mode="r", encoding="UTF-8") as file:
     reader = csv.reader(file)
