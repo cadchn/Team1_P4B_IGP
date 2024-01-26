@@ -1,7 +1,9 @@
 from pathlib import Path
 import csv
 # how do you make the path accessible for all ah - joce :))))
-file_path = Path(r"C:\Users\jocel\PFB IGP\Team1_P4B_IGP\profit_and_loss.csv")
+# file_path = Path(r"C:\Users\jocel\PFB IGP\Team1_P4B_IGP\profit_and_loss.csv")
+
+file_path = Path("profit_loss.py")
 
 with file_path.open(mode="r", encoding="UTF-8") as file:
     reader = csv.reader(file)
