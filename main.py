@@ -3,6 +3,7 @@ import overheads
 import profit_loss
 import cash_on_hand
 from pathlib import Path
+from operator import itemgetter
 
 txtfile = Path("summary_report.txt")
 counter = 0
@@ -36,7 +37,7 @@ with open(txtfile, mode='w') as file:
     elif profit_loss.profit_loss_flag == 2:
         for record in profit_loss.deficit_list:
             file.writelines("[NET PROFIT DEFICIT] DAY: " + f"{record[0]}" + " AMOUNT: USD " + f"{record[1]}" + "\n")
-            profit_loss.deficit_list.sort(key=itemgetter(0)) to line 40
+            profit_loss.deficit_list.sort(key=itemgetter(0)) 
         
         file.writelines("[HIGHEST NET PROFIT DEFICIT] DAY: " + f"{profit_loss.deficit_list[0][0]}" + " AMOUNT: USD " + f"{profit_loss.deficit_list[0][1]}" + "\n")
         file.writelines("[2ND HIGHEST NET PROFIT DEFICIT] DAY: " + f"{profit_loss.deficit_list[1][0]}" + " AMOUNT: USD " + f"{profit_loss.deficit_list[1][1]}" + "\n")

@@ -82,7 +82,4 @@ else:
     deficit_list.sort(key=itemgetter(1)) #sort by ascending order so that the largest deficit is the first in list
 
     
-file_path = Path(r"summary_report.txt")
-with file_path.open(mode="w", encoding="UTF-8") as file:
-  file.write("All days and amount when deficit occured")
-  file.close()
+
