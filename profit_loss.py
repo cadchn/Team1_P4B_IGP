@@ -64,17 +64,6 @@ for difference in difference_list:
 
 if len(surplus_list) == len(difference_list)-1:
     profit_loss_flag = 0
-    surplus_list.sort(key=lambda x: x[1], reverse=True)  #sort by descending order so that the largest surplus is the first in list
-elif len(deficit_list) == len(difference_list)-1:
-    profit_lost_flag = 1
-    deficit_list.sort(key=lambda x: x[1], reverse=False)  #sort by ascending order so that the largest deficit is the first in list
-else:
-    profit_loss_flag = 2
-    deficit_list.sort(key=lambda x: x[1], reverse=False)  #sort by ascending order so that the largest deficit is the first in list
-
-
-if len(surplus_list) == len(difference_list)-1:
-    profit_loss_flag = 0
     surplus_list.sort(key=itemgetter(1), reverse=True) #sort by descending order so that the largest surplus is the first in list
 elif len(deficit_list) == len(difference_list)-1:
     profit_lost_flag = 1
@@ -82,3 +71,5 @@ elif len(deficit_list) == len(difference_list)-1:
 else:
     profit_loss_flag = 2
     deficit_list.sort(key=itemgetter(1)) #sort by ascending order so that the largest deficit is the first in list
+
+
