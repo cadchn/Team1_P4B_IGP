@@ -1,3 +1,4 @@
+from operator import itemgetter
 # from pathlib import Path
 # import csv
 
@@ -121,13 +122,12 @@ for difference in difference_list:
 
 
 if len(surplus_list) == len(difference_list)-1:
-    cash_flow_flag = 0
-    surplus_list.sort(key=lambda x: x[1], reverse=True)  #sort by descending order so that the largest surplus is the first in list
+    cash_flow_flag = 0 
+    surplus_list.sort(key=itemgetter(1), reverse=True)
 elif len(deficit_list) == len(difference_list)-1:
-    cash_flow_flag = 1
-    deficit_list.sort(key=lambda x: x[1], reverse=False)  #sort by ascending order so that the largest deficit is the first in list
+    cash_flow_flag =1 
+    deficit_list.sort(key=itemgetter(1))
 else:
-    cash_flow_flag = 2
-    deficit_list.sort(key=lambda x: x[1], reverse=False)  #sort by ascending order so that the largest deficit is the first in list
-    
+    cash_flow_flag = 2 
+    deficit_list.sort(key=itemgetter(1))
 
