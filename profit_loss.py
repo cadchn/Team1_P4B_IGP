@@ -31,7 +31,17 @@ def difference_computation():
     return difference_list
     
 difference_computation()
+def sort_the_array_column_wise(arr):
+    x = 1
+    for x in range (len(arr)):
+        #for y in range(len(arr) - 1):
+        if arr[x-1][1] >= arr[x][1]:
+            temp = arr[x-1][1]
+            arr[x-1][1] = arr[x][1]
+            arr[x][1] = temp
 
+    for record in arr:
+        print(record)
 
 #Find out if profit is increasing, decreasing or fluctuating
 deficit_list = []
