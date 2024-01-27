@@ -14,7 +14,6 @@ with file_path.open(mode="r", encoding="UTF-8") as file:
     for row in reader:
         profit_loss.append([int(row[0]), float(row[4])]) #read first and last column into the array.
 
-
 #Array to store the net profit difference 
 difference_list = []
 def difference_computation():
