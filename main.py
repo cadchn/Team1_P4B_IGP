@@ -12,12 +12,12 @@ with open(txtfile, mode='w') as file:
     
     if cash_on_hand.cash_flow_flag == 0:
         cash_on_hand.sorted_surplus_list.sort(reverse=True)
-        file.writelines("[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
-        file.writelines("[HIGHEST NET PROFIT SURPLUS] DAY: " + f"{cash_on_hand.sorted_surplus_list[0][1]}" + " AMOUNT: USD " + f"{abs(cash_on_hand.sorted_surplus_list[0][0])}" )
+        file.writelines("[CASH SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN PREVIOUS DAY")
+        file.writelines("[HIGHEST CASH SURPLUS] DAY: " + f"{cash_on_hand.sorted_surplus_list[0][1]}" + " AMOUNT: USD " + f"{abs(cash_on_hand.sorted_surplus_list[0][0])}" )
     elif cash_on_hand.cash_flow_flag == 1:
         cash_on_hand.sorted_deficit_list.sort(reverse=True)      
-        file.writelines("[NET PROFIT DEFICIT] NET PROFIT ON EACH DAY IS LOWER THAN PREVIOUS DAY")
-        file.writelines("[HIGHEST NET PROFIT DEFICIT] DAY: " + f"{cash_on_hand.sorted_deficit_list[0][1]}" + " AMOUNT: USD " + f"{abs(cash_on_hand.sorted_deficit_list[0][0])}" )
+        file.writelines("[CASH DEFICIT] NET PROFIT ON EACH DAY IS LOWER THAN PREVIOUS DAY")
+        file.writelines("[HIGHEST CASH DEFICIT] DAY: " + f"{cash_on_hand.sorted_deficit_list[0][1]}" + " AMOUNT: USD " + f"{abs(cash_on_hand.sorted_deficit_list[0][0])}" )
     
     elif cash_on_hand.cash_flow_flag == 2:
         cash_on_hand.deficit_list.sort(reverse=False) # sort by day
