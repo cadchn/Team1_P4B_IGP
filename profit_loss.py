@@ -4,7 +4,7 @@ import csv
 '''
 Read data from file into array
 '''
-file_path = Path(r"profit_and_loss.csv")
+file_path = Path("profit_and_loss.csv")
 with file_path.open(mode="r", encoding="UTF-8") as file:
     reader = csv.reader(file)
     next(reader)
