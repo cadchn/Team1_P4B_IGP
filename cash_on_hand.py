@@ -1,4 +1,3 @@
-from operator import itemgetter
 from pathlib import Path
 import csv
 
@@ -13,7 +12,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     #read the data into array 
     cash_records = []
     for row in reader:
-        cash_records.append([row[0],int(row[1])])
+        cash_records.append([int(row[0]),int(row[1])])
 
 #Array to store the net profit difference 
 difference_list = []
@@ -36,6 +35,8 @@ difference_computation()
 #Find out if profit is increasing, decreasing or fluctuating
 deficit_list = []
 surplus_list = []
+sorted_deficit_list = []
+sorted_surplus_list = []
 cash_flow_flag = -1
 
 counter = 1
@@ -47,6 +48,8 @@ for difference in difference_list:
         
         if difference_list[counter][1] < difference[1]:
             deficit_list.append([difference_list[counter][0], difference_list[counter][2]])
+            sorted_deficit_list.append([difference_list[counter][2], difference_list[counter][0]])
+            
 
     counter = counter + 1
 
@@ -58,17 +61,16 @@ for difference in difference_list:
 
         if difference_list[counter][1] >= difference[1]:
             surplus_list.append([difference_list[counter][0], difference_list[counter][2]])
+            sorted_surplus_list.append([difference_list[counter][2], difference_list[counter][0]])
 
     counter = counter + 1
 
 
 if len(surplus_list) == len(difference_list)-1:
-    cash_flow_flag = 0 
-    surplus_list.sort(key=itemgetter(1), reverse=True) #sort by descending order so that the largest surplus is the first in list
+    cash_flow_flag = 0
 elif len(deficit_list) == len(difference_list)-1:
-    cash_flow_flag =1 
-    deficit_list.sort(key=itemgetter(1)) #sort by ascending order so that the largest deficit is the first in list
+    cash_flow_flag = 1
 else:
-    cash_flow_flag = 2 
-    deficit_list.sort(key=itemgetter(1)) #sort by ascending order so that the largest deficit is the first in list
+    cash_flow_flag = 2
+    
 

@@ -1,4 +1,3 @@
-from operator import itemgetter
 from pathlib import Path
 import csv
 
@@ -13,6 +12,7 @@ with file_path.open(mode="r", encoding="UTF-8") as file:
     profit_loss = []
     for row in reader:
         profit_loss.append([int(row[0]), float(row[4])]) #read first and last column into the array.
+
 
 #Array to store the net profit difference 
 difference_list = []
@@ -30,21 +30,13 @@ def difference_computation():
     return difference_list
     
 difference_computation()
-def sort_the_array_column_wise(arr):
-    x = 1
-    for x in range (len(arr)):
-        #for y in range(len(arr) - 1):
-        if arr[x-1][1] >= arr[x][1]:
-            temp = arr[x-1][1]
-            arr[x-1][1] = arr[x][1]
-            arr[x][1] = temp
 
-    for record in arr:
-        print(record)
 
 #Find out if profit is increasing, decreasing or fluctuating
 deficit_list = []
 surplus_list = []
+sorted_deficit_list = []
+sorted_surplus_list = []
 profit_loss_flag = -1
 
 counter = 1
@@ -55,7 +47,8 @@ for difference in difference_list:
     if counter < len(difference_list):
         
         if difference_list[counter][1] < difference[1]:
-            deficit_list.append([difference_list[counter][0], difference_list[counter][2]])
+            deficit_list.append([difference_list[counter][0], difference_list[counter][2]]) #append by day field
+            sorted_deficit_list.append([difference_list[counter][2], difference_list[counter][0]]) #append by deficit value field
 
     counter = counter + 1
 
@@ -66,20 +59,16 @@ for difference in difference_list:
     if counter < len(difference_list):
 
         if difference_list[counter][1] >= difference[1]:
-            surplus_list.append([difference_list[counter][0], difference_list[counter][2]])
+            surplus_list.append([difference_list[counter][0], difference_list[counter][2]]) #append by day field
+            sorted_surplus_list.append([difference_list[counter][2], difference_list[counter][0]]) #append by surplus value field
 
     counter = counter + 1
 
 
 if len(surplus_list) == len(difference_list)-1:
     profit_loss_flag = 0
-    surplus_list.sort(key=itemgetter(1), reverse=True) #sort by descending order so that the largest surplus is the first in list
 elif len(deficit_list) == len(difference_list)-1:
     profit_lost_flag = 1
-    deficit_list.sort(key=itemgetter(1)) #sort by ascending order so that the largest deficit is the first in list
 else:
     profit_loss_flag = 2
-    deficit_list.sort(key=itemgetter(1)) #sort by ascending order so that the largest deficit is the first in list
-
     
-
