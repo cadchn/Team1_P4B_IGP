@@ -39,14 +39,14 @@ sorted_deficit_list = []
 sorted_surplus_list = []
 cash_flow_flag = -1
 
-counter = 1
+counter = 1 # Used to iterate through difference list
 
 # go through the list to find deficit and store in a deficit list
-for difference in difference_list:    
+for difference in difference_list:  # Starts a loop that iterates through each element (difference) through (difference_list)
     
     if counter < len(difference_list):
         
-        if difference_list[counter][1] < difference[1]:
+        if difference_list[counter][1] < difference[1]: 
             deficit_list.append([difference_list[counter][0], difference_list[counter][2]])
             sorted_deficit_list.append([difference_list[counter][2], difference_list[counter][0]])
             
@@ -66,9 +66,9 @@ for difference in difference_list:
     counter = counter + 1
 
 
-if len(surplus_list) == len(difference_list)-1:
+if len(surplus_list) == len(difference_list)-1: # Checks if surplus list is equal to one less than the length of difference list
     cash_flow_flag = 0
-elif len(deficit_list) == len(difference_list)-1:
+elif len(deficit_list) == len(difference_list)-1: # Checks if deficit list is equal to one less of difference list
     cash_flow_flag = 1
 else:
     cash_flow_flag = 2
