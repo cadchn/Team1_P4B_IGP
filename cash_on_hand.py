@@ -1,20 +1,20 @@
 from pathlib import Path
 import csv
 
-# create a file path to csv file.
+# Create a file path to csv file.
 fp = Path("cash_on_hand.csv")
 
 # Read the csv file.
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
-    next(reader) # skip header 
+    next(reader) # Skip header row
     
-    #read the data into array 
+    # Read the data into a list 
     cash_records = []
     for row in reader:
         cash_records.append([int(row[0]),int(row[1])])
 
-#Array to store the net profit difference 
+# List is to store the net profit difference 
 difference_list = []
 def difference_computation():
     '''
@@ -53,7 +53,7 @@ for difference in difference_list:  # Starts a loop that iterates through each e
 
     counter = counter + 1
 
-# go through the list to find surplus and store in a surplus list
+# Go through the list to find surplus and store in a surplus list
 counter = 1
 for difference in difference_list:    
     

@@ -2,7 +2,7 @@ from pathlib import Path
 import csv
 
 '''
-Read data from file into array
+Read data from file into list
 '''
 file_path = Path("profit_and_loss.csv")
 with file_path.open(mode="r", encoding="UTF-8") as file:
@@ -14,7 +14,7 @@ with file_path.open(mode="r", encoding="UTF-8") as file:
         profit_loss.append([int(row[0]), float(row[4])]) #read first and last column into the array.
 
 
-# Array to store the net profit difference 
+# List is to store the net profit difference 
 difference_list = []
 def difference_computation():
     '''
@@ -47,8 +47,8 @@ for difference in difference_list:
     if counter < len(difference_list):
         
         if difference_list[counter][1] < difference[1]:
-            deficit_list.append([difference_list[counter][0], difference_list[counter][2]]) #append by day field
-            sorted_deficit_list.append([difference_list[counter][2], difference_list[counter][0]]) #append by deficit value field
+            deficit_list.append([difference_list[counter][0], difference_list[counter][2]]) # Append by day field
+            sorted_deficit_list.append([difference_list[counter][2], difference_list[counter][0]]) # Append by deficit value field
 
     counter = counter + 1
 
@@ -59,8 +59,8 @@ for difference in difference_list:
     if counter < len(difference_list):
 
         if difference_list[counter][1] >= difference[1]:
-            surplus_list.append([difference_list[counter][0], difference_list[counter][2]]) #append by day field
-            sorted_surplus_list.append([difference_list[counter][2], difference_list[counter][0]]) #append by surplus value field
+            surplus_list.append([difference_list[counter][0], difference_list[counter][2]]) # Append by day field
+            sorted_surplus_list.append([difference_list[counter][2], difference_list[counter][0]]) # Append by surplus value field
 
     counter = counter + 1
 
