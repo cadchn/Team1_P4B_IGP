@@ -32,7 +32,7 @@ def difference_computation():
 difference_computation()
 
 
-#Find out if profit is increasing, decreasing or fluctuating
+# Find out if profit is increasing, decreasing or fluctuating
 deficit_list = []
 surplus_list = []
 sorted_deficit_list = []
@@ -41,7 +41,7 @@ cash_flow_flag = -1
 
 counter = 1 # Used to iterate through difference list
 
-# go through the list to find deficit and store in a deficit list
+# Go through the list to find deficit and store in a deficit list
 for difference in difference_list:  # Starts a loop that iterates through each element (difference) through (difference_list)
     
     if counter < len(difference_list):

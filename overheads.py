@@ -14,7 +14,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     for row in reader:
         overheads_records.append([float(row[1]),row[0]]) 
 
-# Sort the list based on the second column in descending order so that the largest overhead is the first in the array
+# Sort the list based on the second column in descending order so that the largest overhead is the first in the list/array
 overheads_records.sort(reverse=True)      
      
         
